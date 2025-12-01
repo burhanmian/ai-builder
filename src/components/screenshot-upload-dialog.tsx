@@ -11,7 +11,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
-import { Image as ImageIcon, Upload, Loader2, Sparkles, X, Camera } from "lucide-react";
+import { Image as ImageIcon, Upload, Loader2, Sparkles, X, Camera, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ScreenshotUploadDialogProps {
@@ -25,13 +25,15 @@ export function ScreenshotUploadDialog({ framework, onCodeGenerated }: Screensho
   const [isDragging, setIsDragging] = useState(false);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [additionalContext, setAdditionalContext] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const handleImageUpload = useCallback(async (files: FileList | null) => {
     if (!files || files.length === 0) return;
+    setError(null);
     
     const file = files[0];
     if (!file.type.startsWith("image/")) {
-      alert("Please upload an image file");
+      setError("Please upload an image file (PNG, JPG, WebP, or GIF)");
       return;
     }
     
@@ -241,6 +243,13 @@ export default GeneratedComponent;`;
         </DialogHeader>
 
         <div className="mt-4 space-y-4">
+          {error && (
+            <div className="flex items-center gap-2 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+              <AlertCircle className="w-4 h-4 flex-shrink-0" />
+              {error}
+            </div>
+          )}
+          
           {!uploadedImage ? (
             <div
               className={cn(
