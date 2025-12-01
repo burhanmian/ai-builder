@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Parse Figma URL to extract file key and node ID
-    const urlPattern = /figma\.com\/(file|design)\/([a-zA-Z0-9]+)/;
+    const urlPattern = /figma\.com\/(file|design)\/([a-zA-Z0-9_-]+)/;
     const match = figmaUrl.match(urlPattern);
 
     if (!match) {
