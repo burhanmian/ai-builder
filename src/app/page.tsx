@@ -1,0 +1,858 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Code2,
+  Figma,
+  Sparkles,
+  Zap,
+  Globe,
+  Smartphone,
+  ArrowRight,
+  Check,
+  Github,
+  Eye,
+  Rocket,
+  Users,
+  Database,
+  GitBranch,
+  Layers,
+  Terminal,
+  Cloud,
+  Server,
+  BookOpen,
+  Wand2,
+  Shield,
+  Settings,
+  Cpu,
+  GraduationCap,
+  HelpCircle,
+  PlayCircle,
+  Upload,
+  Image as ImageIcon,
+  FileCode,
+  FolderUp,
+} from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen gradient-bg">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 glass">
+        <nav className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center">
+              <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+            </div>
+            <span className="text-lg sm:text-xl font-bold gradient-text">CodeMe</span>
+          </Link>
+          {/* Mobile menu button */}
+          <div className="flex md:hidden items-center gap-2">
+            <Link href="/login">
+              <Button variant="ghost" size="sm" className="text-xs">Sign In</Button>
+            </Link>
+            <Link href="/signup">
+              <Button size="sm" className="text-xs bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600">
+                Start
+              </Button>
+            </Link>
+          </div>
+          {/* Desktop navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Features
+            </Link>
+            <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Pricing
+            </Link>
+            <Link href="/login">
+              <Button variant="ghost" size="sm">Sign In</Button>
+            </Link>
+            <Link href="/signup">
+              <Button size="sm" className="bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600">
+                Get Started
+              </Button>
+            </Link>
+          </div>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
+        <div className="container mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6">
+            <Sparkles className="w-4 h-4 text-violet-400" />
+            <span className="text-xs sm:text-sm text-violet-300">Powered by 10+ Intelligent Models</span>
+          </div>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
+            Build Apps with <span className="gradient-text">CodeMe</span>
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-8 px-4">
+            Your one-stop solution for building production-ready web and mobile apps. Perfect for beginners and pros alike. Just describe your idea, and let CodeMe handle the rest.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <Link href="/signup">
+              <Button size="lg" className="bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600 gap-2">
+                Start Building Free <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+            <Link href="#demo">
+              <Button size="lg" variant="outline" className="gap-2">
+                <PlayCircle className="w-4 h-4" /> Watch Tutorial
+              </Button>
+            </Link>
+          </div>
+          
+          {/* Trust Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-12 text-muted-foreground text-sm">
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-green-500" />
+              <span>Enterprise Security</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-blue-500" />
+              <span>10,000+ Developers</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Rocket className="w-4 h-4 text-violet-500" />
+              <span>1M+ Apps Built</span>
+            </div>
+          </div>
+          
+          {/* Hero Image/Preview */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-blue-500/20 blur-3xl" />
+            <div className="relative glass rounded-2xl p-4 shadow-2xl">
+              <div className="bg-background/50 rounded-xl p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                  <span className="text-sm text-muted-foreground ml-4">CodeMe Editor</span>
+                </div>
+                <div className="grid md:grid-cols-3 gap-4 h-64">
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <p className="text-xs text-muted-foreground mb-2">File Explorer</p>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-sm"><Code2 className="w-4 h-4 text-blue-400" /> App.tsx</div>
+                      <div className="flex items-center gap-2 text-sm"><Code2 className="w-4 h-4 text-green-400" /> index.css</div>
+                      <div className="flex items-center gap-2 text-sm"><Code2 className="w-4 h-4 text-yellow-400" /> utils.ts</div>
+                    </div>
+                  </div>
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <p className="text-xs text-muted-foreground mb-2">Smart Chat</p>
+                    <div className="space-y-2 text-sm">
+                      <div className="bg-violet-500/20 rounded p-2">Create a landing page</div>
+                      <div className="bg-blue-500/20 rounded p-2">✨ Generating code...</div>
+                    </div>
+                  </div>
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <p className="text-xs text-muted-foreground mb-2">Live Preview</p>
+                    <div className="bg-white/10 rounded h-full flex items-center justify-center">
+                      <Globe className="w-8 h-8 text-muted-foreground" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything You Need to Build</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              From AI code generation to one-click deployment, CodeMe is your complete app development platform.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="glass border-white/10 hover:border-violet-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-4">
+                  <Wand2 className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Smart Code Generation</CardTitle>
+                <CardDescription>
+                  Just describe what you want to build in plain English. CodeMe understands your intent and generates optimized, production-ready code.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-blue-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>10+ Intelligent Models</CardTitle>
+                <CardDescription>
+                  CodeMe automatically selects the best model for your task. GPT-4, Claude, Gemini, DeepSeek, and more—all working seamlessly behind the scenes.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-green-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-4">
+                  <GraduationCap className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Beginner Friendly</CardTitle>
+                <CardDescription>
+                  Perfect for first-time coders. Interactive tutorials, code explanations, and guided workflows help you learn as you build.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-pink-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center mb-4">
+                  <Figma className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Figma to Code</CardTitle>
+                <CardDescription>
+                  Import your Figma designs and convert them to React or React Native components instantly.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-orange-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center mb-4">
+                  <Code2 className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Monaco Editor</CardTitle>
+                <CardDescription>
+                  Full-featured code editor with syntax highlighting, IntelliSense, and file management.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-cyan-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mb-4">
+                  <Eye className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Live Preview</CardTitle>
+                <CardDescription>
+                  See your changes in real-time with responsive viewport options for desktop, tablet, and mobile.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Import & Visual Design Section - New Lovable-like features */}
+      <section className="py-20 px-6 bg-gradient-to-b from-transparent to-indigo-950/20">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
+              <Upload className="w-4 h-4 text-indigo-400" />
+              <span className="text-sm text-indigo-300">Import & Design</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Start From Anywhere</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Import existing code, upload screenshots, or start from scratch. CodeMe adapts to your workflow.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="glass border-white/10 hover:border-indigo-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-indigo-500/10">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center mb-4 shadow-lg shadow-indigo-500/20">
+                  <FolderUp className="w-7 h-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">Import Existing Code</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Upload your existing project files or paste code directly. CodeMe understands your codebase and helps you extend it intelligently.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> ZIP file upload</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> GitHub repository import</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Paste code snippets</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="glass border-white/10 hover:border-pink-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center mb-4 shadow-lg shadow-pink-500/20">
+                  <ImageIcon className="w-7 h-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">Screenshot to Code</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Upload screenshots, mockups, or hand-drawn sketches. CodeMe analyzes your design and generates pixel-perfect code automatically.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Smart design analysis</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Supports PNG, JPG, WebP</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Hand-drawn sketch support</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="glass border-white/10 hover:border-amber-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-amber-500/10">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mb-4 shadow-lg shadow-amber-500/20">
+                  <FileCode className="w-7 h-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">Multi-file Upload</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Drag and drop multiple files at once. CodeMe preserves your folder structure and understands file relationships.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Drag & drop interface</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Folder structure preserved</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Auto-detect file types</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Advanced Features Section - Replit/Lovable-like features */}
+      <section className="py-20 px-6 bg-gradient-to-b from-transparent to-violet-950/20">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-6">
+              <Rocket className="w-4 h-4 text-green-400" />
+              <span className="text-sm text-green-300">Pro Features</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Build Like a Pro</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Advanced features to help you ship production-ready MVPs and full-stack applications faster.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="glass border-white/10 hover:border-green-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-4">
+                  <Layers className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Starter Templates</CardTitle>
+                <CardDescription>
+                  Launch faster with pre-built templates for SaaS, e-commerce, dashboards, landing pages, and more.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-blue-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center mb-4">
+                  <Database className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Database Integration</CardTitle>
+                <CardDescription>
+                  Auto-generate Prisma schemas, API routes, and database migrations from natural language descriptions.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-purple-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4">
+                  <GitBranch className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Version Control</CardTitle>
+                <CardDescription>
+                  Built-in Git integration with automatic commits, branches, and easy rollback to previous versions.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-cyan-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Real-time Collaboration</CardTitle>
+                <CardDescription>
+                  Work together with your team in real-time. Share projects, leave comments, and code together.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-yellow-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center mb-4">
+                  <Terminal className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Integrated Terminal</CardTitle>
+                <CardDescription>
+                  Run npm commands, install packages, and execute scripts directly in the browser terminal.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-violet-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-4">
+                  <Github className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Copilot Pro Integration</CardTitle>
+                <CardDescription>
+                  Connect your GitHub Copilot Pro subscription for enhanced code completion and intelligent suggestions.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Hosting & Deployment Section */}
+      <section className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+              <Cloud className="w-4 h-4 text-blue-400" />
+              <span className="text-sm text-blue-300">Deploy Anywhere</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">One-Click Deployment</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Deploy your apps to any platform with a single click. No complex configurations needed.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="glass border-white/10 hover:border-orange-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mx-auto mb-4">
+                  <Cloud className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">AWS</CardTitle>
+                <CardDescription>
+                  Deploy to EC2, Lambda, or Amplify with automated CI/CD pipelines.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-blue-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mx-auto mb-4">
+                  <Cloud className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">Google Cloud</CardTitle>
+                <CardDescription>
+                  Push to Cloud Run, App Engine, or Firebase Hosting automatically.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-green-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mx-auto mb-4">
+                  <Server className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">cPanel / DirectAdmin</CardTitle>
+                <CardDescription>
+                  Direct FTP/SFTP deployment to traditional hosting panels.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-violet-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mx-auto mb-4">
+                  <Rocket className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">Vercel / Netlify</CardTitle>
+                <CardDescription>
+                  Instant serverless deployment with edge functions and CDN.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
+            <Card className="glass border-white/10 hover:border-pink-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center mx-auto mb-4">
+                  <Server className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-base">Railway</CardTitle>
+                <CardDescription className="text-sm">
+                  Deploy with built-in databases and Redis.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-cyan-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center mx-auto mb-4">
+                  <Cloud className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-base">DigitalOcean</CardTitle>
+                <CardDescription className="text-sm">
+                  App Platform and Droplet deployment.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-yellow-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center mx-auto mb-4">
+                  <Cpu className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-base">Render</CardTitle>
+                <CardDescription className="text-sm">
+                  Auto-scaling with zero configuration.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Custom Website Deployment Guide Section */}
+      <section id="deploy-guide" className="py-20 px-6 bg-gradient-to-b from-transparent to-emerald-950/10">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
+              <Server className="w-4 h-4 text-emerald-400" />
+              <span className="text-sm text-emerald-300">Step-by-Step Guide</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Deploy to Your Custom Website</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Follow our simple guide to deploy your CodeMe project to any hosting provider.
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            {/* Step 1 */}
+            <div className="glass rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-emerald-500 to-teal-500" />
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0 text-xl font-bold text-white shadow-lg">
+                  1
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Export Your Project</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Click the &quot;Export ZIP&quot; button in the editor to download your complete project with all files, including a ready-to-use <code className="px-1.5 py-0.5 rounded bg-muted text-sm">package.json</code>.
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-4 font-mono text-sm">
+                    <span className="text-green-400">your-project/</span><br/>
+                    ├── src/<br/>
+                    ├── public/<br/>
+                    ├── package.json<br/>
+                    └── README.md
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="glass rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-teal-500 to-cyan-500" />
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center flex-shrink-0 text-xl font-bold text-white shadow-lg">
+                  2
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Build Your Project</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Extract the ZIP and run the build commands in your terminal:
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-4 font-mono text-sm space-y-2">
+                    <div><span className="text-cyan-400">$</span> npm install</div>
+                    <div><span className="text-cyan-400">$</span> npm run build</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 - cPanel */}
+            <div className="glass rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-500 to-blue-500" />
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center flex-shrink-0 text-xl font-bold text-white shadow-lg">
+                  3
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Upload to cPanel / DirectAdmin</h3>
+                  <p className="text-muted-foreground mb-4">
+                    For traditional hosting with cPanel or DirectAdmin:
+                  </p>
+                  <ul className="space-y-2 text-muted-foreground mb-4">
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" /> Log in to your hosting control panel</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" /> Open File Manager or use FTP client (FileZilla)</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" /> Navigate to <code className="px-1.5 py-0.5 rounded bg-muted text-sm">public_html</code> folder</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" /> Upload contents of <code className="px-1.5 py-0.5 rounded bg-muted text-sm">dist/</code> or <code className="px-1.5 py-0.5 rounded bg-muted text-sm">out/</code> folder</li>
+                  </ul>
+                  <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 text-sm text-yellow-200">
+                    💡 <strong>Tip:</strong> For Next.js apps, use <code className="px-1 rounded bg-muted">npm run export</code> to generate static files
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 4 - VPS/Cloud */}
+            <div className="glass rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-violet-500" />
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-violet-500 flex items-center justify-center flex-shrink-0 text-xl font-bold text-white shadow-lg">
+                  4
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Deploy to VPS (AWS, GCP, DigitalOcean)</h3>
+                  <p className="text-muted-foreground mb-4">
+                    For cloud VPS deployment:
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-4 font-mono text-sm space-y-2">
+                    <div className="text-muted-foreground"># Connect to your server</div>
+                    <div><span className="text-cyan-400">$</span> ssh user@your-server-ip</div>
+                    <div className="text-muted-foreground mt-3"># Clone or upload your project</div>
+                    <div><span className="text-cyan-400">$</span> git clone your-repo.git</div>
+                    <div className="text-muted-foreground mt-3"># Install and run</div>
+                    <div><span className="text-cyan-400">$</span> npm install && npm run build</div>
+                    <div><span className="text-cyan-400">$</span> pm2 start npm --name &quot;app&quot; -- start</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link href="/docs/deployment">
+              <Button size="lg" variant="outline" className="gap-2">
+                <BookOpen className="w-4 h-4" /> View Full Documentation
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Beginner Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-transparent to-blue-950/20">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 mb-6">
+              <GraduationCap className="w-4 h-4 text-yellow-400" />
+              <span className="text-sm text-yellow-300">Perfect for Beginners</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Coding Today</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Never coded before? No problem! CodeMe guides you through every step with interactive tutorials and intelligent assistance.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="glass border-white/10 hover:border-yellow-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center mb-4">
+                  <PlayCircle className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-lg">Video Tutorials</CardTitle>
+                <CardDescription>
+                  Step-by-step video guides for building your first app from scratch.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-green-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-4">
+                  <BookOpen className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-lg">Interactive Docs</CardTitle>
+                <CardDescription>
+                  Learn by doing with interactive documentation and code playgrounds.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-blue-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
+                  <HelpCircle className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-lg">Code Explainer</CardTitle>
+                <CardDescription>
+                  Don&apos;t understand the code? CodeMe explains every line in simple terms.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-violet-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-4">
+                  <Settings className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-lg">Guided Workflows</CardTitle>
+                <CardDescription>
+                  Follow step-by-step wizards to build complete apps without getting lost.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Types Section */}
+      <section className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Build Any Type of App</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Whether it&apos;s a web app or mobile app, CodeMe supports multiple frameworks and platforms.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Card className="glass border-white/10 p-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-violet-500 flex items-center justify-center">
+                  <Globe className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">Web Apps</h3>
+                  <p className="text-muted-foreground">React & Next.js</p>
+                </div>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> React 18 with Hooks</li>
+                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Next.js 14 App Router</li>
+                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> TypeScript support</li>
+                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Tailwind CSS styling</li>
+              </ul>
+            </Card>
+            <Card className="glass border-white/10 p-6">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
+                  <Smartphone className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">Android Apps</h3>
+                  <p className="text-muted-foreground">React Native & Flutter</p>
+                </div>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> React Native CLI</li>
+                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Expo managed workflow</li>
+                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Flutter widgets</li>
+                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Native device APIs</li>
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Start free and scale as you grow. No hidden fees.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card className="glass border-white/10">
+              <CardHeader>
+                <CardTitle>Free</CardTitle>
+                <CardDescription>Perfect for beginners</CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">$0</span>
+                  <span className="text-muted-foreground">/month</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 3 projects</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 50 AI generations/day</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> CodeMe AI + GPT-3.5</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Video tutorials</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Community support</li>
+                </ul>
+                <Button className="w-full" variant="outline">Get Started</Button>
+              </CardContent>
+            </Card>
+            <Card className="glass border-violet-500/50 relative">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-violet-500 to-blue-500 rounded-full text-sm font-medium">
+                Most Popular
+              </div>
+              <CardHeader>
+                <CardTitle>Pro</CardTitle>
+                <CardDescription>For professional developers</CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">$29</span>
+                  <span className="text-muted-foreground">/month</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited projects</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited generations</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> All 10+ intelligent models</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Copilot Pro integration</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Deploy to AWS/GCP</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> cPanel/DirectAdmin</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Priority support</li>
+                </ul>
+                <Button className="w-full bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600">
+                  Start Free Trial
+                </Button>
+              </CardContent>
+            </Card>
+            <Card className="glass border-white/10">
+              <CardHeader>
+                <CardTitle>Enterprise</CardTitle>
+                <CardDescription>For teams and organizations</CardDescription>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold">$99</span>
+                  <span className="text-muted-foreground">/month</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Everything in Pro</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited team members</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Real-time collaboration</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Custom model fine-tuning</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Private cloud hosting</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> SSO & audit logs</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 24/7 dedicated support</li>
+                </ul>
+                <Button className="w-full" variant="outline">Contact Sales</Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="glass rounded-3xl p-12 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-blue-500/10" />
+            <div className="relative">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Build Something Amazing?</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+                Join thousands of developers who are building faster with CodeMe. Start your free account today.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="/signup">
+                  <Button size="lg" className="bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600 gap-2">
+                    <Zap className="w-4 h-4" /> Start Building Free
+                  </Button>
+                </Link>
+                <Link href="https://github.com" target="_blank">
+                  <Button size="lg" variant="outline" className="gap-2">
+                    <Github className="w-4 h-4" /> View on GitHub
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-white/10">
+        <div className="container mx-auto">
+          <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center">
+                <Code2 className="w-5 h-5 text-white" />
+              </div>
+              <span className="font-bold">CodeMe</span>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground">
+              <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
+              <Link href="/docs" className="hover:text-foreground transition-colors">Docs</Link>
+              <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground">
+              © 2024 CodeMe. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
