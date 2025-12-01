@@ -282,6 +282,7 @@ export default GeneratedComponent;`;
             </div>
           ) : (
             <div className="relative rounded-xl overflow-hidden border border-white/10">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src={uploadedImage} 
                 alt="Uploaded screenshot" 
