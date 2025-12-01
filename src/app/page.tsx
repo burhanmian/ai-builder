@@ -39,13 +39,25 @@ export default function Home() {
     <div className="min-h-screen gradient-bg">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass">
-        <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center">
-              <Code2 className="w-6 h-6 text-white" />
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center">
+              <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <span className="text-xl font-bold gradient-text">CodeMe</span>
+            <span className="text-lg sm:text-xl font-bold gradient-text">CodeMe</span>
           </Link>
+          {/* Mobile menu button */}
+          <div className="flex md:hidden items-center gap-2">
+            <Link href="/login">
+              <Button variant="ghost" size="sm" className="text-xs">Sign In</Button>
+            </Link>
+            <Link href="/signup">
+              <Button size="sm" className="text-xs bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600">
+                Start
+              </Button>
+            </Link>
+          </div>
+          {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Features
@@ -66,17 +78,17 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6">
         <div className="container mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6">
             <Sparkles className="w-4 h-4 text-violet-400" />
-            <span className="text-sm text-violet-300">CodeMe AI + GPT-4, Claude, Gemini, DeepSeek, Perplexity & Copilot Pro</span>
+            <span className="text-xs sm:text-sm text-violet-300">Powered by 10+ Intelligent Models</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight px-2">
             Build Apps with <span className="gradient-text">CodeMe</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Your one-stop solution for building production-ready web and mobile apps. Perfect for beginners and pros alike. Just describe your idea, and let AI handle the rest.
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 sm:mb-8 px-4">
+            Your one-stop solution for building production-ready web and mobile apps. Perfect for beginners and pros alike. Just describe your idea, and let CodeMe handle the rest.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Link href="/signup">
@@ -128,7 +140,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4">
-                    <p className="text-xs text-muted-foreground mb-2">AI Chat</p>
+                    <p className="text-xs text-muted-foreground mb-2">Smart Chat</p>
                     <div className="space-y-2 text-sm">
                       <div className="bg-violet-500/20 rounded p-2">Create a landing page</div>
                       <div className="bg-blue-500/20 rounded p-2">✨ Generating code...</div>
@@ -162,9 +174,9 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-4">
                   <Wand2 className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle>CodeMe AI</CardTitle>
+                <CardTitle>Smart Code Generation</CardTitle>
                 <CardDescription>
-                  Our proprietary AI trained on millions of code patterns. Generates optimized, production-ready code instantly.
+                  Just describe what you want to build in plain English. CodeMe understands your intent and generates optimized, production-ready code.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -173,9 +185,9 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle>10+ AI Models</CardTitle>
+                <CardTitle>10+ Intelligent Models</CardTitle>
                 <CardDescription>
-                  GPT-4, Claude, Gemini, DeepSeek, Perplexity, Qwen, GitHub Copilot Pro integration. Use the best AI for your task.
+                  CodeMe automatically selects the best model for your task. GPT-4, Claude, Gemini, DeepSeek, and more—all working seamlessly behind the scenes.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -186,7 +198,7 @@ export default function Home() {
                 </div>
                 <CardTitle>Beginner Friendly</CardTitle>
                 <CardDescription>
-                  Perfect for first-time coders. Interactive tutorials, AI explanations, and guided workflows help you learn as you build.
+                  Perfect for first-time coders. Interactive tutorials, code explanations, and guided workflows help you learn as you build.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -248,7 +260,7 @@ export default function Home() {
                 </div>
                 <CardTitle className="text-xl">Import Existing Code</CardTitle>
                 <CardDescription className="text-base leading-relaxed">
-                  Upload your existing project files or paste code directly. CodeMe understands your codebase and helps you extend it with AI.
+                  Upload your existing project files or paste code directly. CodeMe understands your codebase and helps you extend it intelligently.
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
@@ -266,12 +278,12 @@ export default function Home() {
                 </div>
                 <CardTitle className="text-xl">Screenshot to Code</CardTitle>
                 <CardDescription className="text-base leading-relaxed">
-                  Upload screenshots, mockups, or hand-drawn sketches. Our AI vision analyzes your design and generates pixel-perfect code.
+                  Upload screenshots, mockups, or hand-drawn sketches. CodeMe analyzes your design and generates pixel-perfect code automatically.
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> AI vision analysis</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Smart design analysis</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Supports PNG, JPG, WebP</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Hand-drawn sketch support</li>
                 </ul>
@@ -375,7 +387,7 @@ export default function Home() {
                 </div>
                 <CardTitle>Copilot Pro Integration</CardTitle>
                 <CardDescription>
-                  Connect your GitHub Copilot Pro subscription for enhanced AI code completion and suggestions.
+                  Connect your GitHub Copilot Pro subscription for enhanced code completion and intelligent suggestions.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -609,7 +621,7 @@ export default function Home() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Coding Today</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Never coded before? No problem! CodeMe guides you through every step with interactive tutorials and AI assistance.
+              Never coded before? No problem! CodeMe guides you through every step with interactive tutorials and intelligent assistance.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -640,9 +652,9 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
                   <HelpCircle className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle className="text-lg">AI Explainer</CardTitle>
+                <CardTitle className="text-lg">Code Explainer</CardTitle>
                 <CardDescription>
-                  Don&apos;t understand the code? AI explains every line in simple terms.
+                  Don&apos;t understand the code? CodeMe explains every line in simple terms.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -755,7 +767,7 @@ export default function Home() {
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited projects</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited generations</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> All 10+ AI models</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> All 10+ intelligent models</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Copilot Pro integration</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Deploy to AWS/GCP</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> cPanel/DirectAdmin</li>
@@ -780,7 +792,7 @@ export default function Home() {
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Everything in Pro</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited team members</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Real-time collaboration</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Custom AI fine-tuning</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Custom model fine-tuning</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Private cloud hosting</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> SSO & audit logs</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 24/7 dedicated support</li>
@@ -800,7 +812,7 @@ export default function Home() {
             <div className="relative">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Build Something Amazing?</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                Join thousands of developers who are building faster with AI. Start your free account today.
+                Join thousands of developers who are building faster with CodeMe. Start your free account today.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/signup">
@@ -820,22 +832,22 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-white/10">
+      <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-white/10">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center">
                 <Code2 className="w-5 h-5 text-white" />
               </div>
               <span className="font-bold">CodeMe</span>
             </div>
-            <div className="flex items-center gap-8 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground">
               <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy</Link>
               <Link href="/terms" className="hover:text-foreground transition-colors">Terms</Link>
               <Link href="/docs" className="hover:text-foreground transition-colors">Docs</Link>
               <Link href="/blog" className="hover:text-foreground transition-colors">Blog</Link>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               © 2024 CodeMe. All rights reserved.
             </p>
           </div>
