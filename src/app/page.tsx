@@ -28,6 +28,10 @@ import {
   GraduationCap,
   HelpCircle,
   PlayCircle,
+  Upload,
+  Image as ImageIcon,
+  FileCode,
+  FolderUp,
 } from "lucide-react";
 
 export default function Home() {
@@ -223,6 +227,78 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Import & Visual Design Section - New Lovable-like features */}
+      <section className="py-20 px-6 bg-gradient-to-b from-transparent to-indigo-950/20">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
+              <Upload className="w-4 h-4 text-indigo-400" />
+              <span className="text-sm text-indigo-300">Import & Design</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Start From Anywhere</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Import existing code, upload screenshots, or start from scratch. CodeMe adapts to your workflow.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="glass border-white/10 hover:border-indigo-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-indigo-500/10">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center mb-4 shadow-lg shadow-indigo-500/20">
+                  <FolderUp className="w-7 h-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">Import Existing Code</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Upload your existing project files or paste code directly. CodeMe understands your codebase and helps you extend it with AI.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> ZIP file upload</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> GitHub repository import</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Paste code snippets</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="glass border-white/10 hover:border-pink-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-pink-500/10">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center mb-4 shadow-lg shadow-pink-500/20">
+                  <ImageIcon className="w-7 h-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">Screenshot to Code</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Upload screenshots, mockups, or hand-drawn sketches. Our AI vision analyzes your design and generates pixel-perfect code.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> AI vision analysis</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Supports PNG, JPG, WebP</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Hand-drawn sketch support</li>
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="glass border-white/10 hover:border-amber-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-amber-500/10">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center mb-4 shadow-lg shadow-amber-500/20">
+                  <FileCode className="w-7 h-7 text-white" />
+                </div>
+                <CardTitle className="text-xl">Multi-file Upload</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Drag and drop multiple files at once. CodeMe preserves your folder structure and understands file relationships.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Drag & drop interface</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Folder structure preserved</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-500" /> Auto-detect file types</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Advanced Features Section - Replit/Lovable-like features */}
       <section className="py-20 px-6 bg-gradient-to-b from-transparent to-violet-950/20">
         <div className="container mx-auto">
@@ -400,6 +476,125 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Custom Website Deployment Guide Section */}
+      <section id="deploy-guide" className="py-20 px-6 bg-gradient-to-b from-transparent to-emerald-950/10">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
+              <Server className="w-4 h-4 text-emerald-400" />
+              <span className="text-sm text-emerald-300">Step-by-Step Guide</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Deploy to Your Custom Website</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Follow our simple guide to deploy your CodeMe project to any hosting provider.
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            {/* Step 1 */}
+            <div className="glass rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-emerald-500 to-teal-500" />
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0 text-xl font-bold text-white shadow-lg">
+                  1
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Export Your Project</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Click the &quot;Export ZIP&quot; button in the editor to download your complete project with all files, including a ready-to-use <code className="px-1.5 py-0.5 rounded bg-muted text-sm">package.json</code>.
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-4 font-mono text-sm">
+                    <span className="text-green-400">your-project/</span><br/>
+                    ├── src/<br/>
+                    ├── public/<br/>
+                    ├── package.json<br/>
+                    └── README.md
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="glass rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-teal-500 to-cyan-500" />
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center flex-shrink-0 text-xl font-bold text-white shadow-lg">
+                  2
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Build Your Project</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Extract the ZIP and run the build commands in your terminal:
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-4 font-mono text-sm space-y-2">
+                    <div><span className="text-cyan-400">$</span> npm install</div>
+                    <div><span className="text-cyan-400">$</span> npm run build</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 - cPanel */}
+            <div className="glass rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-500 to-blue-500" />
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center flex-shrink-0 text-xl font-bold text-white shadow-lg">
+                  3
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Upload to cPanel / DirectAdmin</h3>
+                  <p className="text-muted-foreground mb-4">
+                    For traditional hosting with cPanel or DirectAdmin:
+                  </p>
+                  <ul className="space-y-2 text-muted-foreground mb-4">
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" /> Log in to your hosting control panel</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" /> Open File Manager or use FTP client (FileZilla)</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" /> Navigate to <code className="px-1.5 py-0.5 rounded bg-muted text-sm">public_html</code> folder</li>
+                    <li className="flex items-start gap-2"><Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" /> Upload contents of <code className="px-1.5 py-0.5 rounded bg-muted text-sm">dist/</code> or <code className="px-1.5 py-0.5 rounded bg-muted text-sm">out/</code> folder</li>
+                  </ul>
+                  <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 text-sm text-yellow-200">
+                    💡 <strong>Tip:</strong> For Next.js apps, use <code className="px-1 rounded bg-muted">npm run export</code> to generate static files
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 4 - VPS/Cloud */}
+            <div className="glass rounded-2xl p-6 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-violet-500" />
+              <div className="flex gap-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-violet-500 flex items-center justify-center flex-shrink-0 text-xl font-bold text-white shadow-lg">
+                  4
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Deploy to VPS (AWS, GCP, DigitalOcean)</h3>
+                  <p className="text-muted-foreground mb-4">
+                    For cloud VPS deployment:
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-4 font-mono text-sm space-y-2">
+                    <div className="text-muted-foreground"># Connect to your server</div>
+                    <div><span className="text-cyan-400">$</span> ssh user@your-server-ip</div>
+                    <div className="text-muted-foreground mt-3"># Clone or upload your project</div>
+                    <div><span className="text-cyan-400">$</span> git clone your-repo.git</div>
+                    <div className="text-muted-foreground mt-3"># Install and run</div>
+                    <div><span className="text-cyan-400">$</span> npm install && npm run build</div>
+                    <div><span className="text-cyan-400">$</span> pm2 start npm --name &quot;app&quot; -- start</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link href="/docs/deployment">
+              <Button size="lg" variant="outline" className="gap-2">
+                <BookOpen className="w-4 h-4" /> View Full Documentation
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

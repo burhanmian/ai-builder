@@ -27,6 +27,8 @@ import { CodeEditorPane } from "@/components/code-editor-pane";
 import { AIChatPanel } from "@/components/ai-chat-panel";
 import { LivePreview } from "@/components/live-preview";
 import { FigmaImportDialog } from "@/components/figma-import-dialog";
+import { ImportCodeDialog } from "@/components/import-code-dialog";
+import { ScreenshotUploadDialog } from "@/components/screenshot-upload-dialog";
 import { exportProjectAsZip } from "@/lib/export";
 import type { ProjectFile } from "@/types";
 import type { Viewport } from "@/types";
@@ -119,7 +121,7 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {/* AI Model Selector */}
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-violet-400" />
@@ -141,6 +143,24 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
               </SelectContent>
             </Select>
           </div>
+
+          <ImportCodeDialog
+            onImport={(importedFiles) => {
+              importedFiles.forEach(file => {
+                const existingFile = files.find(f => f.path === file.path);
+                if (existingFile) {
+                  handleFileChange(file.path, file.content);
+                } else {
+                  handleAddFile(file.path, file.content, file.language);
+                }
+              });
+            }}
+          />
+
+          <ScreenshotUploadDialog
+            framework={project.framework}
+            onCodeGenerated={(code, filename) => handleAddFile(filename, code, "typescript")}
+          />
 
           <FigmaImportDialog
             framework={project.framework}
