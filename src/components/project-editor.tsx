@@ -58,7 +58,7 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
   const [openTabs, setOpenTabs] = useState<string[]>(
     files.length > 0 ? [files[0].path] : []
   );
-  const [aiModel, setAiModel] = useState("gpt-4");
+  const [aiModel, setAiModel] = useState("codeme-ai");
   const [viewport, setViewport] = useState<Viewport>("desktop");
   const [messages, setMessages] = useState(project.messages);
 
@@ -124,10 +124,11 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-violet-400" />
             <Select value={aiModel} onValueChange={setAiModel}>
-              <SelectTrigger className="w-[160px] h-8">
+              <SelectTrigger className="w-[180px] h-8">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
+                <SelectItem value="codeme-ai">⭐ CodeMe AI</SelectItem>
                 <SelectItem value="gpt-4">GPT-4</SelectItem>
                 <SelectItem value="gpt-3.5">GPT-3.5</SelectItem>
                 <SelectItem value="claude-3">Claude 3</SelectItem>
@@ -136,6 +137,7 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
                 <SelectItem value="perplexity">Perplexity</SelectItem>
                 <SelectItem value="perplexity-online">Perplexity Online</SelectItem>
                 <SelectItem value="qwen-coder">Qwen Coder</SelectItem>
+                <SelectItem value="copilot-pro">GitHub Copilot</SelectItem>
               </SelectContent>
             </Select>
           </div>

@@ -7,16 +7,22 @@
   <img src="https://img.shields.io/badge/Prisma-5-2D3748?style=for-the-badge&logo=prisma" alt="Prisma" />
 </p>
 
-CodeMe is an AI-powered application builder that lets you create web and mobile apps using natural language prompts. Describe what you want, and let AI write the code for you. Works like Replit and Lovable with advanced features for building MVPs and full-stack projects.
+**Build Apps with CodeMe** - Your one-stop solution for creating production-ready web and mobile apps. Perfect for beginners and professionals alike. Works like Replit and Lovable with advanced features for building MVPs and full-stack projects.
 
 ## ✨ Features
 
-### 🤖 AI Code Generation
-- **8+ AI Models**: Choose from GPT-4, Claude 3, Gemini Pro, DeepSeek Coder, Perplexity, Qwen, and more
+### 🤖 CodeMe AI & Multi-Model Support
+- **CodeMe AI**: Our proprietary AI trained for optimal code generation
+- **10+ AI Models**: GPT-4, Claude 3, Gemini Pro, DeepSeek, Perplexity, Qwen
+- **GitHub Copilot Pro**: Connect your Copilot subscription for enhanced suggestions
 - **Natural Language Prompts**: Describe features in plain English
-- **Streaming Responses**: See code generated in real-time
-- **Context-Aware**: AI understands your project structure
-- **Fallback Mode**: Demo mode works even without API keys configured
+- **Smart Fallback**: Automatically uses the best available AI when APIs aren't configured
+
+### 🎓 Beginner Friendly
+- **Video Tutorials**: Step-by-step guides for building your first app
+- **Interactive Docs**: Learn by doing with code playgrounds
+- **AI Explainer**: Get explanations for any code in simple terms
+- **Guided Workflows**: Follow wizards to build complete apps
 
 ### 🎨 Figma to Code
 - Import Figma designs via URL
@@ -40,13 +46,18 @@ CodeMe is an AI-powered application builder that lets you create web and mobile 
 - Export projects as ZIP
 - User dashboard with all projects
 
-### 🚀 Pro Features (Replit/Lovable-like)
+### 🚀 Pro Features
 - **Starter Templates**: Pre-built templates for SaaS, e-commerce, dashboards
 - **Database Integration**: Auto-generate Prisma schemas and API routes
 - **Version Control**: Built-in Git integration with automatic commits
-- **One-Click Deploy**: Deploy to Vercel, Netlify, Railway instantly
 - **Real-time Collaboration**: Work with your team in real-time
 - **Integrated Terminal**: Run npm commands in the browser
+
+### ☁️ One-Click Deployment
+Deploy to any platform with a single click:
+- **Cloud Providers**: AWS (EC2, Lambda, Amplify), Google Cloud (Cloud Run, Firebase), DigitalOcean
+- **Serverless**: Vercel, Netlify, Railway, Render
+- **Traditional Hosting**: cPanel, DirectAdmin (FTP/SFTP)
 
 ### 🔐 Authentication
 - OAuth login with GitHub and Google

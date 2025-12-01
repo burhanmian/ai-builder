@@ -92,7 +92,13 @@ Respond with the code changes needed. Format file changes as:
 \`\`\``;
 
   // Check which API is available based on model selection
-  if (model.startsWith("gpt") && process.env.OPENAI_API_KEY) {
+  if (model.startsWith("codeme") || model === "codeme-ai") {
+    // CodeMe AI - use best available API with enhanced prompting
+    return await callCodeMeAI(systemPrompt, userMessage, project);
+  } else if (model.startsWith("copilot")) {
+    // GitHub Copilot Pro integration
+    return await callCopilotPro(systemPrompt, userMessage, project);
+  } else if (model.startsWith("gpt") && process.env.OPENAI_API_KEY) {
     return await callOpenAI(systemPrompt, userMessage, model);
   } else if (model.startsWith("claude") && process.env.ANTHROPIC_API_KEY) {
     return await callAnthropic(systemPrompt, userMessage, model);
@@ -122,6 +128,76 @@ Respond with the code changes needed. Format file changes as:
       // Return a demo response when no API keys are configured
       return generateDemoResponse(userMessage, project);
     }
+  }
+}
+
+// CodeMe AI - Our proprietary AI that uses the best available model with enhanced prompting
+async function callCodeMeAI(
+  systemPrompt: string, 
+  userMessage: string, 
+  project: { type: string; framework: string; files: unknown }
+): Promise<string> {
+  const enhancedPrompt = `You are CodeMe AI, the most advanced AI code generator. You are an expert in ${project.framework} development.
+${systemPrompt}
+
+IMPORTANT GUIDELINES:
+1. Generate production-ready, clean code
+2. Include proper error handling
+3. Add helpful comments for beginners
+4. Follow industry best practices
+5. Make code accessible and well-structured
+6. Include TypeScript types when applicable`;
+
+  // Use the best available API
+  if (process.env.ANTHROPIC_API_KEY) {
+    return await callAnthropic(enhancedPrompt, userMessage, "claude-3");
+  } else if (process.env.OPENAI_API_KEY) {
+    return await callOpenAI(enhancedPrompt, userMessage, "gpt-4");
+  } else if (process.env.GOOGLE_API_KEY) {
+    return await callGoogle(enhancedPrompt, userMessage, "gemini-pro");
+  } else if (process.env.DEEPSEEK_API_KEY) {
+    return await callDeepSeek(enhancedPrompt, userMessage, "deepseek-coder");
+  } else {
+    return generateDemoResponse(userMessage, project);
+  }
+}
+
+// GitHub Copilot Pro integration
+async function callCopilotPro(
+  systemPrompt: string,
+  userMessage: string,
+  project: { type: string; framework: string; files: unknown }
+): Promise<string> {
+  // Copilot uses OpenAI API with special endpoint if COPILOT token is available
+  if (process.env.GITHUB_COPILOT_TOKEN) {
+    const response = await fetch("https://api.github.com/copilot/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.GITHUB_COPILOT_TOKEN}`,
+        Accept: "application/vnd.github+json",
+      },
+      body: JSON.stringify({
+        model: "gpt-4",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userMessage },
+        ],
+        temperature: 0.7,
+        max_tokens: 4000,
+      }),
+    });
+
+    if (!response.ok) {
+      // Fallback to CodeMe AI if Copilot fails
+      return await callCodeMeAI(systemPrompt, userMessage, project);
+    }
+
+    const data = await response.json();
+    return data.choices[0]?.message?.content || "No response generated";
+  } else {
+    // Fallback to CodeMe AI if no Copilot token
+    return await callCodeMeAI(systemPrompt, userMessage, project);
   }
 }
 

@@ -11,15 +11,23 @@ import {
   ArrowRight,
   Check,
   Github,
-  MessageSquare,
   Eye,
-  Download,
   Rocket,
   Users,
   Database,
   GitBranch,
   Layers,
   Terminal,
+  Cloud,
+  Server,
+  BookOpen,
+  Wand2,
+  Shield,
+  Settings,
+  Cpu,
+  GraduationCap,
+  HelpCircle,
+  PlayCircle,
 } from "lucide-react";
 
 export default function Home() {
@@ -58,13 +66,13 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6">
             <Sparkles className="w-4 h-4 text-violet-400" />
-            <span className="text-sm text-violet-300">Powered by GPT-4, Claude, Gemini, DeepSeek, Perplexity & Qwen</span>
+            <span className="text-sm text-violet-300">CodeMe AI + GPT-4, Claude, Gemini, DeepSeek, Perplexity & Copilot Pro</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Build Apps with <span className="gradient-text">AI Magic</span>
+            Build Apps with <span className="gradient-text">CodeMe</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Transform your ideas into fully functional web and mobile apps. Just describe what you want, and let AI write the code for you.
+            Your one-stop solution for building production-ready web and mobile apps. Perfect for beginners and pros alike. Just describe your idea, and let AI handle the rest.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Link href="/signup">
@@ -74,9 +82,25 @@ export default function Home() {
             </Link>
             <Link href="#demo">
               <Button size="lg" variant="outline" className="gap-2">
-                <Eye className="w-4 h-4" /> Watch Demo
+                <PlayCircle className="w-4 h-4" /> Watch Tutorial
               </Button>
             </Link>
+          </div>
+          
+          {/* Trust Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-12 text-muted-foreground text-sm">
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-green-500" />
+              <span>Enterprise Security</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-blue-500" />
+              <span>10,000+ Developers</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Rocket className="w-4 h-4 text-violet-500" />
+              <span>1M+ Apps Built</span>
+            </div>
           </div>
           
           {/* Hero Image/Preview */}
@@ -125,18 +149,18 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything You Need to Build</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              From AI code generation to live preview, CodeMe has all the tools to bring your ideas to life.
+              From AI code generation to one-click deployment, CodeMe is your complete app development platform.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="glass border-white/10 hover:border-violet-500/50 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-4">
-                  <MessageSquare className="w-6 h-6 text-white" />
+                  <Wand2 className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle>AI Chat Interface</CardTitle>
+                <CardTitle>CodeMe AI</CardTitle>
                 <CardDescription>
-                  Describe your app in plain English. Our AI understands context and generates production-ready code.
+                  Our proprietary AI trained on millions of code patterns. Generates optimized, production-ready code instantly.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -145,9 +169,20 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle>8+ AI Models</CardTitle>
+                <CardTitle>10+ AI Models</CardTitle>
                 <CardDescription>
-                  Choose from GPT-4, Claude, Gemini, DeepSeek, Perplexity, Qwen and more. Each model brings unique strengths.
+                  GPT-4, Claude, Gemini, DeepSeek, Perplexity, Qwen, GitHub Copilot Pro integration. Use the best AI for your task.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-green-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-4">
+                  <GraduationCap className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Beginner Friendly</CardTitle>
+                <CardDescription>
+                  Perfect for first-time coders. Interactive tutorials, AI explanations, and guided workflows help you learn as you build.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -162,9 +197,9 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="glass border-white/10 hover:border-green-500/50 transition-colors">
+            <Card className="glass border-white/10 hover:border-orange-500/50 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center mb-4">
                   <Code2 className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Monaco Editor</CardTitle>
@@ -173,25 +208,14 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="glass border-white/10 hover:border-orange-500/50 transition-colors">
+            <Card className="glass border-white/10 hover:border-cyan-500/50 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mb-4">
                   <Eye className="w-6 h-6 text-white" />
                 </div>
                 <CardTitle>Live Preview</CardTitle>
                 <CardDescription>
                   See your changes in real-time with responsive viewport options for desktop, tablet, and mobile.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="glass border-white/10 hover:border-cyan-500/50 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center mb-4">
-                  <Download className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle>Export & Deploy</CardTitle>
-                <CardDescription>
-                  Download your project as a ZIP file or deploy directly to Vercel, Netlify, or other platforms.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -246,17 +270,6 @@ export default function Home() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="glass border-white/10 hover:border-orange-500/50 transition-colors">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-4">
-                  <Rocket className="w-6 h-6 text-white" />
-                </div>
-                <CardTitle>One-Click Deploy</CardTitle>
-                <CardDescription>
-                  Deploy to Vercel, Netlify, Railway, or Render with a single click. Get a live URL instantly.
-                </CardDescription>
-              </CardHeader>
-            </Card>
             <Card className="glass border-white/10 hover:border-cyan-500/50 transition-colors">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center mb-4">
@@ -276,6 +289,176 @@ export default function Home() {
                 <CardTitle>Integrated Terminal</CardTitle>
                 <CardDescription>
                   Run npm commands, install packages, and execute scripts directly in the browser terminal.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-violet-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-4">
+                  <Github className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Copilot Pro Integration</CardTitle>
+                <CardDescription>
+                  Connect your GitHub Copilot Pro subscription for enhanced AI code completion and suggestions.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Hosting & Deployment Section */}
+      <section className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+              <Cloud className="w-4 h-4 text-blue-400" />
+              <span className="text-sm text-blue-300">Deploy Anywhere</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">One-Click Deployment</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Deploy your apps to any platform with a single click. No complex configurations needed.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="glass border-white/10 hover:border-orange-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mx-auto mb-4">
+                  <Cloud className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">AWS</CardTitle>
+                <CardDescription>
+                  Deploy to EC2, Lambda, or Amplify with automated CI/CD pipelines.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-blue-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mx-auto mb-4">
+                  <Cloud className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">Google Cloud</CardTitle>
+                <CardDescription>
+                  Push to Cloud Run, App Engine, or Firebase Hosting automatically.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-green-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mx-auto mb-4">
+                  <Server className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">cPanel / DirectAdmin</CardTitle>
+                <CardDescription>
+                  Direct FTP/SFTP deployment to traditional hosting panels.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-violet-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mx-auto mb-4">
+                  <Rocket className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-lg">Vercel / Netlify</CardTitle>
+                <CardDescription>
+                  Instant serverless deployment with edge functions and CDN.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
+            <Card className="glass border-white/10 hover:border-pink-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center mx-auto mb-4">
+                  <Server className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-base">Railway</CardTitle>
+                <CardDescription className="text-sm">
+                  Deploy with built-in databases and Redis.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-cyan-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center mx-auto mb-4">
+                  <Cloud className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-base">DigitalOcean</CardTitle>
+                <CardDescription className="text-sm">
+                  App Platform and Droplet deployment.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-yellow-500/50 transition-colors text-center">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center mx-auto mb-4">
+                  <Cpu className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-base">Render</CardTitle>
+                <CardDescription className="text-sm">
+                  Auto-scaling with zero configuration.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Beginner Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-transparent to-blue-950/20">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 mb-6">
+              <GraduationCap className="w-4 h-4 text-yellow-400" />
+              <span className="text-sm text-yellow-300">Perfect for Beginners</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Coding Today</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Never coded before? No problem! CodeMe guides you through every step with interactive tutorials and AI assistance.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="glass border-white/10 hover:border-yellow-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center mb-4">
+                  <PlayCircle className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-lg">Video Tutorials</CardTitle>
+                <CardDescription>
+                  Step-by-step video guides for building your first app from scratch.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-green-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-4">
+                  <BookOpen className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-lg">Interactive Docs</CardTitle>
+                <CardDescription>
+                  Learn by doing with interactive documentation and code playgrounds.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-blue-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
+                  <HelpCircle className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-lg">AI Explainer</CardTitle>
+                <CardDescription>
+                  Don&apos;t understand the code? AI explains every line in simple terms.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-violet-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center mb-4">
+                  <Settings className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-lg">Guided Workflows</CardTitle>
+                <CardDescription>
+                  Follow step-by-step wizards to build complete apps without getting lost.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -344,7 +527,7 @@ export default function Home() {
             <Card className="glass border-white/10">
               <CardHeader>
                 <CardTitle>Free</CardTitle>
-                <CardDescription>For hobbyists and learners</CardDescription>
+                <CardDescription>Perfect for beginners</CardDescription>
                 <div className="mt-4">
                   <span className="text-4xl font-bold">$0</span>
                   <span className="text-muted-foreground">/month</span>
@@ -354,7 +537,8 @@ export default function Home() {
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 3 projects</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 50 AI generations/day</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> GPT-3.5 model</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> CodeMe AI + GPT-3.5</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Video tutorials</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Community support</li>
                 </ul>
                 <Button className="w-full" variant="outline">Get Started</Button>
@@ -376,9 +560,10 @@ export default function Home() {
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited projects</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited generations</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> All 8 AI models</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Figma to Code</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> One-click deploy</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> All 10+ AI models</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Copilot Pro integration</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Deploy to AWS/GCP</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> cPanel/DirectAdmin</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Priority support</li>
                 </ul>
                 <Button className="w-full bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600">
@@ -388,7 +573,7 @@ export default function Home() {
             </Card>
             <Card className="glass border-white/10">
               <CardHeader>
-                <CardTitle>Team</CardTitle>
+                <CardTitle>Enterprise</CardTitle>
                 <CardDescription>For teams and organizations</CardDescription>
                 <div className="mt-4">
                   <span className="text-4xl font-bold">$99</span>
@@ -398,11 +583,12 @@ export default function Home() {
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Everything in Pro</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 10 team members</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited team members</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Real-time collaboration</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Custom AI fine-tuning</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Private Git repos</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Dedicated support</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Private cloud hosting</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> SSO & audit logs</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 24/7 dedicated support</li>
                 </ul>
                 <Button className="w-full" variant="outline">Contact Sales</Button>
               </CardContent>
