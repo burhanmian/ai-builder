@@ -124,7 +124,7 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-violet-400" />
             <Select value={aiModel} onValueChange={setAiModel}>
-              <SelectTrigger className="w-[140px] h-8">
+              <SelectTrigger className="w-[160px] h-8">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -132,6 +132,10 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
                 <SelectItem value="gpt-3.5">GPT-3.5</SelectItem>
                 <SelectItem value="claude-3">Claude 3</SelectItem>
                 <SelectItem value="gemini-pro">Gemini Pro</SelectItem>
+                <SelectItem value="deepseek-coder">DeepSeek Coder</SelectItem>
+                <SelectItem value="perplexity">Perplexity</SelectItem>
+                <SelectItem value="perplexity-online">Perplexity Online</SelectItem>
+                <SelectItem value="qwen-coder">Qwen Coder</SelectItem>
               </SelectContent>
             </Select>
           </div>

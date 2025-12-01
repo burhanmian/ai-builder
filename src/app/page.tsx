@@ -14,6 +14,12 @@ import {
   MessageSquare,
   Eye,
   Download,
+  Rocket,
+  Users,
+  Database,
+  GitBranch,
+  Layers,
+  Terminal,
 } from "lucide-react";
 
 export default function Home() {
@@ -52,7 +58,7 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6">
             <Sparkles className="w-4 h-4 text-violet-400" />
-            <span className="text-sm text-violet-300">Powered by GPT-4, Claude & Gemini</span>
+            <span className="text-sm text-violet-300">Powered by GPT-4, Claude, Gemini, DeepSeek, Perplexity & Qwen</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Build Apps with <span className="gradient-text">AI Magic</span>
@@ -139,9 +145,9 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <CardTitle>Multiple AI Models</CardTitle>
+                <CardTitle>8+ AI Models</CardTitle>
                 <CardDescription>
-                  Choose from GPT-4, Claude, or Gemini. Each model brings unique strengths to your project.
+                  Choose from GPT-4, Claude, Gemini, DeepSeek, Perplexity, Qwen and more. Each model brings unique strengths.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -186,6 +192,90 @@ export default function Home() {
                 <CardTitle>Export & Deploy</CardTitle>
                 <CardDescription>
                   Download your project as a ZIP file or deploy directly to Vercel, Netlify, or other platforms.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Advanced Features Section - Replit/Lovable-like features */}
+      <section className="py-20 px-6 bg-gradient-to-b from-transparent to-violet-950/20">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-6">
+              <Rocket className="w-4 h-4 text-green-400" />
+              <span className="text-sm text-green-300">Pro Features</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Build Like a Pro</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Advanced features to help you ship production-ready MVPs and full-stack applications faster.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="glass border-white/10 hover:border-green-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center mb-4">
+                  <Layers className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Starter Templates</CardTitle>
+                <CardDescription>
+                  Launch faster with pre-built templates for SaaS, e-commerce, dashboards, landing pages, and more.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-blue-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center mb-4">
+                  <Database className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Database Integration</CardTitle>
+                <CardDescription>
+                  Auto-generate Prisma schemas, API routes, and database migrations from natural language descriptions.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-purple-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4">
+                  <GitBranch className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Version Control</CardTitle>
+                <CardDescription>
+                  Built-in Git integration with automatic commits, branches, and easy rollback to previous versions.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-orange-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-4">
+                  <Rocket className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>One-Click Deploy</CardTitle>
+                <CardDescription>
+                  Deploy to Vercel, Netlify, Railway, or Render with a single click. Get a live URL instantly.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-cyan-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Real-time Collaboration</CardTitle>
+                <CardDescription>
+                  Work together with your team in real-time. Share projects, leave comments, and code together.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="glass border-white/10 hover:border-yellow-500/50 transition-colors">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center mb-4">
+                  <Terminal className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle>Integrated Terminal</CardTitle>
+                <CardDescription>
+                  Run npm commands, install packages, and execute scripts directly in the browser terminal.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -286,8 +376,9 @@ export default function Home() {
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited projects</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Unlimited generations</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> GPT-4, Claude, Gemini</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> All 8 AI models</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Figma to Code</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> One-click deploy</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Priority support</li>
                 </ul>
                 <Button className="w-full bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-600 hover:to-blue-600">
@@ -307,9 +398,10 @@ export default function Home() {
               <CardContent>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Everything in Pro</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 5 team members</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Shared projects</li>
-                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Custom integrations</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> 10 team members</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Real-time collaboration</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Custom AI fine-tuning</li>
+                  <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Private Git repos</li>
                   <li className="flex items-center gap-2"><Check className="w-5 h-5 text-green-500" /> Dedicated support</li>
                 </ul>
                 <Button className="w-full" variant="outline">Contact Sales</Button>

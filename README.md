@@ -7,15 +7,16 @@
   <img src="https://img.shields.io/badge/Prisma-5-2D3748?style=for-the-badge&logo=prisma" alt="Prisma" />
 </p>
 
-CodeMe is an AI-powered application builder that lets you create web and mobile apps using natural language prompts. Describe what you want, and let AI write the code for you.
+CodeMe is an AI-powered application builder that lets you create web and mobile apps using natural language prompts. Describe what you want, and let AI write the code for you. Works like Replit and Lovable with advanced features for building MVPs and full-stack projects.
 
 ## ✨ Features
 
 ### 🤖 AI Code Generation
-- **Multiple AI Models**: Choose from GPT-4, Claude 3, or Gemini Pro
+- **8+ AI Models**: Choose from GPT-4, Claude 3, Gemini Pro, DeepSeek Coder, Perplexity, Qwen, and more
 - **Natural Language Prompts**: Describe features in plain English
 - **Streaming Responses**: See code generated in real-time
 - **Context-Aware**: AI understands your project structure
+- **Fallback Mode**: Demo mode works even without API keys configured
 
 ### 🎨 Figma to Code
 - Import Figma designs via URL
@@ -39,6 +40,14 @@ CodeMe is an AI-powered application builder that lets you create web and mobile 
 - Export projects as ZIP
 - User dashboard with all projects
 
+### 🚀 Pro Features (Replit/Lovable-like)
+- **Starter Templates**: Pre-built templates for SaaS, e-commerce, dashboards
+- **Database Integration**: Auto-generate Prisma schemas and API routes
+- **Version Control**: Built-in Git integration with automatic commits
+- **One-Click Deploy**: Deploy to Vercel, Netlify, Railway instantly
+- **Real-time Collaboration**: Work with your team in real-time
+- **Integrated Terminal**: Run npm commands in the browser
+
 ### 🔐 Authentication
 - OAuth login with GitHub and Google
 - Secure session management with NextAuth.js
@@ -51,7 +60,7 @@ CodeMe is an AI-powered application builder that lets you create web and mobile 
 - Node.js 18+ 
 - PostgreSQL database
 - GitHub and/or Google OAuth credentials
-- (Optional) API keys for OpenAI, Anthropic, and/or Google AI
+- (Optional) API keys for AI providers - app works in demo mode without them
 
 ### Installation
 

@@ -91,16 +91,37 @@ Respond with the code changes needed. Format file changes as:
 // code here
 \`\`\``;
 
-  // Check which API is available
+  // Check which API is available based on model selection
   if (model.startsWith("gpt") && process.env.OPENAI_API_KEY) {
     return await callOpenAI(systemPrompt, userMessage, model);
   } else if (model.startsWith("claude") && process.env.ANTHROPIC_API_KEY) {
     return await callAnthropic(systemPrompt, userMessage, model);
   } else if (model.startsWith("gemini") && process.env.GOOGLE_API_KEY) {
     return await callGoogle(systemPrompt, userMessage, model);
+  } else if (model.startsWith("deepseek") && process.env.DEEPSEEK_API_KEY) {
+    return await callDeepSeek(systemPrompt, userMessage, model);
+  } else if (model.startsWith("perplexity") && process.env.PERPLEXITY_API_KEY) {
+    return await callPerplexity(systemPrompt, userMessage, model);
+  } else if (model.startsWith("qwen") && process.env.QWEN_API_KEY) {
+    return await callQwen(systemPrompt, userMessage, model);
   } else {
-    // Return a demo response when no API keys are configured
-    return generateDemoResponse(userMessage, project);
+    // Fallback: try any available API key
+    if (process.env.OPENAI_API_KEY) {
+      return await callOpenAI(systemPrompt, userMessage, "gpt-4");
+    } else if (process.env.ANTHROPIC_API_KEY) {
+      return await callAnthropic(systemPrompt, userMessage, "claude-3");
+    } else if (process.env.GOOGLE_API_KEY) {
+      return await callGoogle(systemPrompt, userMessage, "gemini-pro");
+    } else if (process.env.DEEPSEEK_API_KEY) {
+      return await callDeepSeek(systemPrompt, userMessage, "deepseek-coder");
+    } else if (process.env.PERPLEXITY_API_KEY) {
+      return await callPerplexity(systemPrompt, userMessage, "perplexity");
+    } else if (process.env.QWEN_API_KEY) {
+      return await callQwen(systemPrompt, userMessage, "qwen-coder");
+    } else {
+      // Return a demo response when no API keys are configured
+      return generateDemoResponse(userMessage, project);
+    }
   }
 }
 
@@ -183,6 +204,87 @@ async function callGoogle(systemPrompt: string, userMessage: string, model: stri
 
   const data = await response.json();
   return data.candidates[0]?.content?.parts[0]?.text || "No response generated";
+}
+
+async function callDeepSeek(systemPrompt: string, userMessage: string, model: string): Promise<string> {
+  const modelName = model === "deepseek-coder" ? "deepseek-coder" : "deepseek-chat";
+  const response = await fetch("https://api.deepseek.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: modelName,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userMessage },
+      ],
+      temperature: 0.7,
+      max_tokens: 4000,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`DeepSeek API error: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data.choices[0]?.message?.content || "No response generated";
+}
+
+async function callPerplexity(systemPrompt: string, userMessage: string, model: string): Promise<string> {
+  const modelName = model === "perplexity-online" ? "llama-3.1-sonar-large-128k-online" : "llama-3.1-sonar-large-128k-chat";
+  const response = await fetch("https://api.perplexity.ai/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: modelName,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userMessage },
+      ],
+      temperature: 0.7,
+      max_tokens: 4000,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Perplexity API error: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data.choices[0]?.message?.content || "No response generated";
+}
+
+async function callQwen(systemPrompt: string, userMessage: string, model: string): Promise<string> {
+  const modelName = model === "qwen-coder" ? "qwen-coder-plus" : "qwen-plus";
+  const response = await fetch("https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.QWEN_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: modelName,
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userMessage },
+      ],
+      temperature: 0.7,
+      max_tokens: 4000,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Qwen API error: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data.choices[0]?.message?.content || "No response generated";
 }
 
 function generateDemoResponse(userMessage: string, project: { type: string; framework: string }): string {
